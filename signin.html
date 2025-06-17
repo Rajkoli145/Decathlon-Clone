@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Decathlon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar"><div class="nav-container"><a href="index.html" class="logo"><img src="assets/images/logo.png" style="margin-left: 500px;" alt="Decathlon"></a></div></nav>
+    <div class="login-wrapper">
+      <div class="login-left">
+        <img src="assets/images/signimage.png" alt="Cycling family banner">
+      </div>
+      <div class="login-right">
+        <h2 class="login-heading">Additional information</h2>
+        <p class="login-sub">A new account will be created with the email address you shared with us.</p>
+        <label for="emailInput" class="login-label">Enter an email address</label>
+        <div class="input-wrapper" id="emailWrapper">
+          <input type="email" id="emailInput" placeholder="name@example.com" required>
+          <i class="fa fa-check"></i>
+        </div>
+        <button class="primary-btn login-next" id="nextBtn" disabled>NEXT</button>
+
+        <div class="login-footer-links">
+          <a href="#">Having trouble logging in ?</a>
+          <span> | </span>
+          <a href="#">Privacy</a>
+        </div>
+
+        <div class="login-lang"><img src="assets/images/indiaflag.png" alt="IN" width="24"> English</div>
+        <small class="recaptcha-note">This site is protected by reCaptcha. Google <a href="#">Privacy Policy</a> applies as well as their <a href="#">terms of service</a></small>
+      </div>
+    </div>
+
+    <script src="script/signin.js"></script>
+  </body>
+</html>

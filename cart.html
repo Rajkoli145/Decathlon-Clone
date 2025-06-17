@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Cart - Decathlon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar"><div class="nav-container"><a href="index.html" class="logo"><img src="assets/images/logo.png" alt="Decathlon"></a></div></nav>
+  <main class="cart-page">
+      <h1>Your Cart</h1>
+      <div id="emptyCartMsg" class="empty-msg">Your cart is empty</div>
+      <div class="cart-table-header">
+        <span>Product</span>
+        <span>Quantity</span>
+        <span>Price</span>
+        <span>Subtotal</span>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div>Total: <span id="cartTotal">₹ 0</span></div>
+        <button id="checkoutBtn" class="primary-btn">CHECKOUT</button>
+      </div>
+    </main>
+
+    <script src="script/cart.js"></script>
+</body>
+</html>

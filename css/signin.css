@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left side - Image */
+.image-section {
+    display: none;
+    position: relative;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right side - Form */
+.form-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 48px 0 64px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+    letter-spacing: 2px;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 0 32px;
+    max-width: 384px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-header {
+    margin-bottom: 32px;
+}
+
+.form-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 24px;
+}
+
+.form-header p {
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Form */
+.signin-form {
+    margin-bottom: 32px;
+}
+
+.input-group {
+    margin-bottom: 32px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s;
+    padding-right: 48px;
+}
+
+.input-wrapper input:focus {
+    border-color: #2563eb;
+}
+
+.check-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next-button {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    letter-spacing: 1px;
+}
+
+.next-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Links */
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.link {
+    font-size: 14px;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: #374151;
+}
+
+/* Language selector */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.flag {
+    width: 24px;
+    height: 16px;
+    background: linear-gradient(to bottom, #ff9933 0%, #ff9933 33.33%, #ffffff 33.33%, #ffffff 66.66%, #138808 66.66%, #138808 100%);
+    border: 1px solid #d1d5db;
+    border-radius: 2px;
+}
+
+.language-selector span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Footer */
+.footer {
+    padding: 0 32px 32px 32px;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+    max-width: 384px;
+    margin: 0 auto;
+}
+
+.footer-link {
+    color: #6b7280;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #374151;
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .image-section {
+        display: flex;
+        width: 50%;
+    }
+    
+    .form-section {
+        width: 50%;
+    }
+    
+    .main-content {
+        padding: 0 64px;
+    }
+    
+    .footer {
+        padding: 0 64px 32px 64px;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .header {
+        padding: 32px 0 48px 0;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .main-content {
+        padding: 0 24px;
+    }
+    
+    .footer {
+        padding: 0 24px 24px 24px;
+    }
+    
+    .form-header h1 {
+        font-size: 20px;
+    }
+}

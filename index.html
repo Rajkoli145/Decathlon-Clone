@@ -1,0 +1,1984 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="assets/images/logo1.png" / style="width: 50px; height: 50px;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decathlon - Buy Sport Products Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- All Sports Menu -->
+            <div class="all-sports-menu" style="margin-right: 20px;">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                </button>
+                <span class="menu-text">ALL<br>SPORTS</span>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo" style="margin-right: 32px;">
+                <img src="assets/images/logo.png" alt="Decathlon">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container" style="flex: 1; max-width: 400px; margin-right: 32px; position: relative;">
+                <input type="text" class="search-input" placeholder="Search For 60+ Sports and 6000+ Products">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- Search Modal -->
+                <div class="search-modal" id="searchModal">
+                    <div class="search-modal-header">
+                        <!-- Header content, if any, or leave empty if handled by button positioning -->
+                        <button class="close-modal-btn" id="closeSearchModalBtn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <!-- Default state: Trending Searches and Recently Viewed -->
+                    <div class="search-modal-content-wrapper-default" id="searchModalDefaultContent">
+                        <div class="search-modal-column trending-searches-column">
+                            <h4>TRENDING SEARCHES</h4>
+                            <div class="trending-tags">
+                                <span class="trend-tag">Rain Coats</span>
+                                <span class="trend-tag">Shoes For Men</span>
+                                <span class="trend-tag">Cycles</span>
+                                <span class="trend-tag">Bags</span>
+                                <span class="trend-tag">Jackets</span>
+                                <span class="trend-tag">Yoga Mat</span>
+                                <span class="trend-tag">Trackpants</span>
+                                <span class="trend-tag">Badminton Racket</span>
+                                <span class="trend-tag">Tshirts For Men</span>
+                                <span class="trend-tag">Gym Equipments</span>
+                                <span class="trend-tag">Tent</span>
+                                <span class="trend-tag">Football</span>
+                            </div>
+                        </div>
+                        <div class="search-modal-column recently-viewed-column">
+                            <h4>Recently Viewed</h4>
+                            <div class="recently-viewed-products-wrapper">
+                                <button class="recent-arrow left" id="recentLeft">&#8249;</button>
+                                <div class="recently-viewed-products" id="recentlyViewedProducts">
+                                    <!-- Recently viewed products will be dynamically added here -->
+                                    <!-- Placeholder product cards -->
+                                    <div class="product-card-small">
+                                        <img src="https://contents.mediadecathlon.com/p2583096/8ef9a0183bfeecec1ecf3b83956c2579/p2583096.jpg?format=auto&quality=70&f=768x0" alt="Product 1">
+                                        <div class="product-rating-small"><i class="fa fa-star"></i> 4.6 | 6.0k</div>
+                                        <div class="product-title-small">Men Light Cargo Pant Grey - NH500</div>
+                                        <div class="product-price-small">₹ 1,499</div>
+                                    </div>
+                                    <div class="product-card-small">
+                                        <img src="https://contents.mediadecathlon.com/p2811737/55c78b015d464c8aac427e3595400de3/p2811737.jpg?format=auto&quality=70&f=768x0" alt="Product 2">
+                                        <div class="product-rating-small"><i class="fa fa-star"></i> 4.7 | 7.9k</div>
+                                        <div class="product-title-small">Microfibre Towel Basic S Lightweight</div>
+                                        <div class="product-price-small">₹ 99</div>
+                                    </div>
+                                    <div class="product-card-small">
+                                        <img src="https://contents.mediadecathlon.com/p2157315/f7e6bac4b706a58cb6d47203ece9234c/p2157315.jpg?format=auto&quality=70&f=768x0" alt="Product 3">
+                                        <div class="product-rating-small"><i class="fa fa-star"></i> 4.6 | 24k</div>
+                                        <div class="product-title-small">Men's Regular Cotton Fitness T-Shi....</div>
+                                        <div class="product-price-small">₹ 499</div>
+                                    </div>
+                                    <div class="product-card-small">
+                                        <img src="https://contents.mediadecathlon.com/p2008017/5dda1cd25f41bde63b27ba297b71f748/p2008017.jpg?format=auto&quality=70&f=768x0" alt="Product 4">
+                                        <div class="product-rating-small"><i class="fa fa-star"></i> 4.6 | 4.6k</div>
+                                        <div class="product-title-small">Soft Cotton, Stretchy, Elastic Waist...</div>
+                                        <div class="product-price-small">₹ 799</div>
+                                    </div>
+                                    <div class="product-card-small">
+                                        <img src="https://contents.mediadecathlon.com/p2742008/90f9b437efe48d94eede03840e5fa4f3/p2742008.jpg?format=auto&quality=70&f=768x0" alt="Product 5">
+                                        <div class="product-rating-small"><i class="fa fa-star"></i> 4.5 | 2.1k</div>
+                                        <div class="product-title-small">T-Shirt Sensation 530 M</div>
+                                        <div class="product-price-small">₹ 499</div>
+                                    </div>
+                                </div>
+                                <button class="recent-arrow right" id="recentRight">&#8250;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Search results state: Collections and Top Products -->
+                    <div class="search-modal-content-wrapper-results" id="searchModalResultsContent" style="display: none;">
+                        <div class="search-modal-column collections-column">
+                            <h4>COLLECTIONS</h4>
+                            <div class="search-collections" id="searchCollections">
+                                <!-- Existing placeholder collection items -->
+                                <div class="collection-item">
+                                    <i class="fas fa-search"></i>
+                                    <span>Trekking Cargo Trousers</span>
+                                    <i class="fas fa-expand-alt"></i>
+                                </div>
+                                <div class="collection-item">
+                                    <i class="fas fa-search"></i>
+                                    <span><b>Camo Cargo</b></span>
+                                    <i class="fas fa-expand-alt"></i>
+                                </div>
+                                <div class="collection-item">
+                                    <i class="fas fa-search"></i>
+                                    <span><b>Camouflage Cargo</b></span>
+                                    <i class="fas fa-expand-alt"></i>
+                                </div>
+                                <div class="collection-item">
+                                    <i class="fas fa-search"></i>
+                                    <span>Trekking Cargos</span>
+                                    <i class="fas fa-expand-alt"></i>
+                                </div>
+                                <div class="collection-item">
+                                    <i class="fas fa-search"></i>
+                                    <span>Men Travel Trekking Cargo Trousers - Travel 100 Grey</span>
+                                    <i class="fas fa-expand-alt"></i>
+                                </div>
+                                <div class="collection-item">
+                                    <i class="fas fa-search"></i>
+                                    <span>Solognac Cargo</span>
+                                    <i class="fas fa-expand-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal-column products-column">
+                            <h4>TOP PRODUCTS</h4>
+                            <div class="search-results" id="searchResults">
+                                <!-- Product results will be dynamically added here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-modal-footer" id="searchModalFooter">
+                        <a href="#" class="explore-all-link">Explore all products matching "<span id="exploreSearchTerm"></span>" (<span id="exploreProductCount"></span>) <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Location -->
+            <div class="delivery-location" style="margin-right: 32px;">
+                <div class="location-text">
+                    <span class="location-label">Delivery Location</span>
+                    <span class="location-code">560002 CHANGE</span>
+                </div>
+            </div>
+
+            <!-- Right Navigation -->
+            <div class="nav-right" style="display: flex; gap: 20px; align-items: center;">
+                <a href="signin.html" class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Sign In</span>
+                </a>
+                <div class="nav-item" id="shopNavItem" style="display: none;">
+                    <i class="fas fa-store"></i>
+                    <span>Shop</span>
+                </div>
+                <a href="wishlist.html" class="nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="cart.html" class="nav-item cart-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="banner-slider">
+        <button class="banner-arrow left" id="bannerLeft">&#8592;</button>
+        <img id="bannerImages" src="assets/images/newuseroffers.avif" alt="Main Banner" />
+        <button class="banner-arrow right" id="bannerRight">&#8594;</button>
+      </div>
+
+      <!-- Categories Section -->
+      <section class="categories-section" style="padding: 10px;">
+        <div class="categories-container" style="display: flex; justify-content: space-evenly; flex-wrap: nowrap; gap: 16px; padding: 0 40px;margin-top:25px">
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;">
+        <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+              <img src="assets/images/rain-essential.png" alt="Rain Essential" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label" style="font-size: 14px;">Rain Essential</div>
+          </div>
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;">
+      <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+              <img src="assets/images/active-wear.png" alt="Active Wear" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label"style="font-size: 14px;">Active Wear</div>
+          </div>
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;">
+      <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+              <img src="assets/images/gym.png" alt="Kids" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label"style="font-size: 14px;">Gym & Fitness</div>
+          </div>
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;margin-top:13px">
+      <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: -12px;">
+              <img src="assets/images/treking.png" alt="Hiiking & Trekking" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label"">Hiiking & Trekking</div>
+          </div>
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;margin-top:13px">
+      <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);margin-top: -12px;">
+              <img src="assets/images/bags.avif" alt="Bags & Backpacks" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label"">Bags & Backpacks</div>
+          </div>
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;margin-top:13px">
+       <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);margin-top: -12px;">
+              <img src="assets/images/shoes.avif" alt="Shoes" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label"">Shoes</div>
+          </div>
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;">
+        <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+              <img src="assets/images/sport-acce.png" alt="Sports Accessories" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label"style="font-size: 14px;">Sports Accessories</div>
+          </div>
+          <div class="category-item" style="text-align: center; display: flex; flex-direction: column; justify-content: flex-start;">
+      <div class="category-image" style="width: 110px; height: 140px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+              <img src="assets/images/cycling.png" alt="Cycling" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="category-label"style="font-size: 14px;">Cycling</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Yoga Collection Banner -->
+      <section class="yoga-banner">
+        <div class="yoga-slider-container">
+          <button class="banner-arrow left" id="yogaLeft">&#8592;</button>
+          <img id="yogaImage" src="assets/images/banners/ban1.png" alt="Yoga Collection" />
+          <button class="banner-arrow right" id="yogaRight">&#8594;</button>
+        </div>
+      </section>
+
+      <!-- Sports Slider Section -->
+      <section class="sports-slider-section">
+        <h2 style="font-size: 15px; font-weight: 600; ">YOUR FAVORITE SPORTS</h2>
+        <div class="sports-slider-container">
+          <button class="sports-arrow left" id="sportsLeft">&#8592;</button>
+          <div class="sports-slider" id="sportsSlider">
+            <!-- Example item, repeat for each sport -->
+            <div class="sports-slide">
+              <img src="assets/images/yfs/runner.png" alt="Running">
+              <div class="sports-label">Running</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/trecking.png" alt="Trekking">
+              <div class="sports-label">Trekking</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/gym.png" alt="Gym">
+              <div class="sports-label">Fitness</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/badmintan.png" alt="Badminton">
+              <div class="sports-label">Badminton</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/footbal.png" alt="Football">
+              <div class="sports-label">Football</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/tennis.png" alt="Tennis">
+              <div class="sports-label">Tennis</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/cycling.png" alt="Cycling">
+              <div class="sports-label">Cycling</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/runner.png" alt="Swimming">
+              <div class="sports-label">Swimming</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/basketball.png" alt="Basketball">
+              <div class="sports-label">Basketball</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/climbing.png" alt="Climbing">
+              <div class="sports-label">Climbing</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/cricket.png" alt="Cricket">
+              <div class="sports-label">Cricket</div>
+            </div>
+            <div class="sports-slide">
+              <img src="assets/images/yfs/golf.png" alt="Golf">
+              <div class="sports-label">Golf</div>
+            </div>
+          </div>
+          <button class="sports-arrow right" id="sportsRight">&#8594;</button>
+        </div>
+      </section>
+
+
+      <section>
+        <div class="slider-img">
+          <img src="assets/images/siderimg.png" alt="" >
+        </div>
+       
+      </section>
+
+      <section class="product-slider-section summer-essentials">
+        <div class="product-slider-header">
+          <span>Beat the Heat! Summer Essentials.</span>
+          <div class="product-slider-arrows">
+            <button class="product-arrow left" data-slider="summer-essentials">&#8592;</button>
+            <button class="product-arrow right" data-slider="summer-essentials">&#8594;</button>
+          </div>
+        </div>
+        <div class="product-slider-container">
+          <div class="product-slider" data-slider="summer-essentials">
+            <!-- Example product card, repeat for each product -->
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1724744/a8373278310c30c7ce0af8f5b36843c1/p1724744.jpg?format=auto&quality=70&f=768x0" alt="Product 1">
+                <span class="rating"><i class="fa fa-star"></i> 4.39 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Men Gym Trackpants Joggers Sli...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2583096/8ef9a0183bfeecec1ecf3b83956c2579/p2583096.jpg?format=auto&quality=70&f=768x0" alt="Product 2">
+                <span class="rating"><i class="fa fa-star"></i> 4.61 | 6.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">QUECHUA</div>
+                <div class="product-title">Men Light Cargo Pant Grey - NH500</div>
+                <div class="product-price">₹ 1,499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 1,999</span> <span class='discount-text-badge'>25% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2811737/55c78b015d464c8aac427e3595400de3/p2811737.jpg?format=auto&quality=70&f=768x0" alt="Product 3">
+                <span class="rating"><i class="fa fa-star"></i> 4.73 | 7.9k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Microfibre Towel Basic S Lightweight</div>
+                <div class="product-price">₹ 99</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new" style="background-color: #ffe082;">Price drop</span>
+                <img src="https://contents.mediadecathlon.com/p2157315/f7e6bac4b706a58cb6d47203ece9234c/p2157315.jpg?format=auto&quality=70&f=768x0" alt="Product 4">
+                <span class="rating"><i class="fa fa-star"></i> 4.68 | 24k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DECATHLON</div>
+                <div class="product-title">Men's Regular Cotton Fitness T-Shi....</div>
+                <div class="product-price">₹ 499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 699</span> <span class='discount-text-badge'>28% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2008017/5dda1cd25f41bde63b27ba297b71f748/p2008017.jpg?format=auto&quality=70&f=768x0" alt="Product 5">
+                <span class="rating"><i class="fa fa-star"></i> 4.65 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Soft Cotton, Stretchy, Elastic Waist...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2742008/90f9b437efe48d94eede03840e5fa4f3/p2742008.jpg?format=auto&quality=70&f=768x0" alt="Product 6">
+                <span class="rating"><i class="fa fa-star"></i> 4.55 | 2.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">T-Shirt Sensation 530 M</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2498855/3d3ea0373c95f79c14067a370b5e682f/p2498855.jpg?f=150x150" alt="Product 7">
+                <span class="rating"><i class="fa fa-star"></i> 4.80 | 3.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Tennis Racket TR100</div>
+                <div class="product-price">₹ 1,299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1605540/4997bf2d4aa01126a2fd6c4d20554f1d/badminton-plastic-shuttlecock-psc-100x1-yellow.jpg?format=auto&quality=70&f=768x0" alt="Product 8">
+                <span class="rating"><i class="fa fa-star"></i> 4.20 | 1.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Plastic Shuttlecock</div>
+                <div class="product-price">₹ 199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2268324/603c6777689d4f123cbea3365c52d98e/portugal-football-size-5-2022.jpg?format=auto&quality=70&f=768x0" alt="Product 9">
+                <span class="rating"><i class="fa fa-star"></i> 4.75 | 5.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPSTA</div>
+                <div class="product-title">Football Size 5</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2688738/4e162bce835bda5a12f4dda3544cdb1d/yoga-mat-8-mm-thick-173-x-61-cm-with-strap-foam-jungle-blue-for-soft-yoga.jpg?format=auto&quality=70&f=768x0" alt="Product 10">
+                <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Yoga Mat Comfort 8mm</div>
+                <div class="product-price">₹ 899</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2774762/b2201dbca82ba79b0529b7dae4388f81/trekking-bag-50l-easy-fit-mt-100-black.jpg?format=auto&quality=70&f=768x0" alt="Product 11">
+                <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">SIMOND</div>
+                <div class="product-title">Trekking Bag 50L Easy-Fit....</div>
+                <div class="product-price">₹ 1,199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2867700/71637510adff77417c48db345e5bacf2/swimming-goggles-l-soft-green-tinted-secure-fit-turquoise.jpg?format=auto&quality=70&f=768x0" alt="Product 12">
+                <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Adult Swimming Goggles Men Womem...</div>
+                <div class="product-price">₹ 299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2636549/e9d41b1b7ab5d5a6c4b80271f1c817ed/jogflow-1901-men-running-shoes-cushioned-lightweight-flexibleblue-20km-wk.jpg?format=auto&quality=70&f=768x0" alt="Product 13">
+                <span class="rating"><i class="fa fa-star"></i> 4.90 | 9.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPRUN</div>
+                <div class="product-title">RJogflow 190.1 Men Running Shoes...</div>
+                <div class="product-price">₹ 2,499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2877146/fd71118729093e46b62efbd42f8a1bcb/set-of-2-durable-bats-3-table-tennis-balls-set-ppr-100.jpg?format=auto&quality=70&f=768x0" alt="Product 14">
+                <span class="rating"><i class="fa fa-star"></i> 4.35 | 1.3k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Set of 2 Durable Bats + 3 Table Tennis Balls....</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2664135/57ab7df0240b5a42ddd901776a7e9917/adult-badminton-racket-br-100-blue.jpg?format=auto&quality=70&f=768x0" alt="Product 15">
+                <span class="rating"><i class="fa fa-star"></i> 4.25 | 1.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Racket BR100</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">LIMITED STOCK</span>
+                <img src="https://contents.mediadecathlon.com/p2303250/d56abf8c9f9aa7580a3c58aefafedd7e/adult-football-jersey-shirt-portugal-f500-2024.jpg?format=auto&quality=70&f=768x0" alt="Product 16">
+                <span class="rating"><i class="fa fa-star"></i> 4.70 | 4.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPSTA</div>
+                <div class="product-title">Football Jersey Adult</div>
+                <div class="product-price">₹ 999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2426985/bbcddd9478ef14df6702955943051249/gym-duffel-bag-30l-fold-down-black.jpg?format=auto&quality=70&f=768x0" alt="Product 17">
+                <span class="rating"><i class="fa fa-star"></i> 4.40 | 2.7k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Gym Bag 30L</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2924510/7bfda0baa45d401422170dad10aa859f/camping-tent-mh100-2-person-special-edition-.jpg?format=auto&quality=70&f=768x0" alt="Product 18">
+                <span class="rating"><i class="fa fa-star"></i> 4.85 | 8.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">QUECHUA</div>
+                <div class="product-title">Camping Tent 2 Person</div>
+                <div class="product-price">₹ 2,999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2903312/0747146f110a37fa742db9e3c5f2ca8a/adult-swimming-cap-silicone-56-60-cm-quick-dry-lightweight-white.jpg?format=auto&quality=70&f=2520x0" alt="Product 19">
+                <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Adult Swimming Cap Silicone 56-60 Cm Quick-Dry & Lightweight White</div>
+                <div class="product-price">₹ 299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2394572/45f7d7f3cede641c4ff711025de69d9e/unisex-running-cap-kiprun-5-panels-green-white.jpg?format=auto&quality=70&f=768x0" alt="Product 20">
+                <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPRUN</div>
+                <div class="product-title">Unisex Running Cap - Kiprun 5 Panels Green White</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">ONLINE EXCLUSIVE</span>
+                <img src="https://contents.mediadecathlon.com/p2626845/1662c5b6c1432bea8575a8ca5aca648c/insulated-12-racket-tennis-bag-xl-pro-control-gael-monfils-black.jpg?format=auto&quality=70&f=768x0" alt="Product 21">
+                <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Insulated 12-Racket Tennis Bag XL Pro Control Gaël Monfils - Black</div>
+                <div class="product-price">₹ 6,999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <!-- Yoga Collection Banner -->
+      <section class="yoga-banner">
+        <div class="yoga-slider-container">
+          <button class="banner-arrow left" id="swimLeft">&#8592;</button>
+          <img id="swimImage" src="assets/images/banners2/ban1.png" alt="Swim Collection" />
+          <button class="banner-arrow right" id="swimRight">&#8594;</button>
+        </div>
+      </section>
+
+
+
+      <section class="product-slider-section most-popular">
+        <div class="product-slider-header">
+          <span>Most Popular Products</span>
+          <div class="product-slider-arrows">
+            <button class="product-arrow left" data-slider="most-popular">&#8592;</button>
+            <button class="product-arrow right" data-slider="most-popular">&#8594;</button>
+          </div>
+        </div>
+
+        <div class="product-slider-container">
+          <div class="product-slider" data-slider="most-popular">
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1724744/a8373278310c30c7ce0af8f5b36843c1/p1724744.jpg?format=auto&quality=70&f=768x0" alt="Product 1">
+                <span class="rating"><i class="fa fa-star"></i> 4.39 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Men Gym Trackpants Joggers Sli...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2583096/8ef9a0183bfeecec1ecf3b83956c2579/p2583096.jpg?format=auto&quality=70&f=768x0" alt="Product 2">
+                <span class="rating"><i class="fa fa-star"></i> 4.61 | 6.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">QUECHUA</div>
+                <div class="product-title">Men Light Cargo Pant Grey - NH500</div>
+                <div class="product-price">₹ 1,499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 1,999</span> <span class='discount-text-badge'>25% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2811737/55c78b015d464c8aac427e3595400de3/p2811737.jpg?format=auto&quality=70&f=768x0" alt="Product 3">
+                <span class="rating"><i class="fa fa-star"></i> 4.73 | 7.9k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Microfibre Towel Basic S Lightweight</div>
+                <div class="product-price">₹ 99</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new" style="background-color: #ffe082;">Price drop</span>
+                <img src="https://contents.mediadecathlon.com/p2157315/f7e6bac4b706a58cb6d47203ece9234c/p2157315.jpg?format=auto&quality=70&f=768x0" alt="Product 4">
+                <span class="rating"><i class="fa fa-star"></i> 4.68 | 24k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DECATHLON</div>
+                <div class="product-title">Men's Regular Cotton Fitness T-Shi....</div>
+                <div class="product-price">₹ 499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 699</span> <span class='discount-text-badge'>28% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2008017/5dda1cd25f41bde63b27ba297b71f748/p2008017.jpg?format=auto&quality=70&f=768x0" alt="Product 5">
+                <span class="rating"><i class="fa fa-star"></i> 4.65 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Soft Cotton, Stretchy, Elastic Waist...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2742008/90f9b437efe48d94eede03840e5fa4f3/p2742008.jpg?format=auto&quality=70&f=768x0" alt="Product 6">
+                <span class="rating"><i class="fa fa-star"></i> 4.55 | 2.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">T-Shirt Sensation 530 M</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2498855/3d3ea0373c95f79c14067a370b5e682f/p2498855.jpg?f=150x150" alt="Product 7">
+                <span class="rating"><i class="fa fa-star"></i> 4.80 | 3.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Tennis Racket TR100</div>
+                <div class="product-price">₹ 1,299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1605540/4997bf2d4aa01126a2fd6c4d20554f1d/badminton-plastic-shuttlecock-psc-100x1-yellow.jpg?format=auto&quality=70&f=768x0" alt="Product 8">
+                <span class="rating"><i class="fa fa-star"></i> 4.20 | 1.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Plastic Shuttlecock</div>
+                <div class="product-price">₹ 199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2268324/603c6777689d4f123cbea3365c52d98e/portugal-football-size-5-2022.jpg?format=auto&quality=70&f=768x0" alt="Product 9">
+                <span class="rating"><i class="fa fa-star"></i> 4.75 | 5.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPSTA</div>
+                <div class="product-title">Football Size 5</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2688738/4e162bce835bda5a12f4dda3544cdb1d/yoga-mat-8-mm-thick-173-x-61-cm-with-strap-foam-jungle-blue-for-soft-yoga.jpg?format=auto&quality=70&f=768x0" alt="Product 10">
+                <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Yoga Mat Comfort 8mm</div>
+                <div class="product-price">₹ 899</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2774762/b2201dbca82ba79b0529b7dae4388f81/trekking-bag-50l-easy-fit-mt-100-black.jpg?format=auto&quality=70&f=768x0" alt="Product 11">
+                <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">SIMOND</div>
+                <div class="product-title">Trekking Bag 50L Easy-Fit....</div>
+                <div class="product-price">₹ 1,199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2867700/71637510adff77417c48db345e5bacf2/swimming-goggles-l-soft-green-tinted-secure-fit-turquoise.jpg?format=auto&quality=70&f=768x0" alt="Product 12">
+                <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Adult Swimming Goggles Men Womem...</div>
+                <div class="product-price">₹ 299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2636549/e9d41b1b7ab5d5a6c4b80271f1c817ed/jogflow-1901-men-running-shoes-cushioned-lightweight-flexibleblue-20km-wk.jpg?format=auto&quality=70&f=768x0" alt="Product 13">
+                <span class="rating"><i class="fa fa-star"></i> 4.90 | 9.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPRUN</div>
+                <div class="product-title">RJogflow 190.1 Men Running Shoes...</div>
+                <div class="product-price">₹ 2,499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2877146/fd71118729093e46b62efbd42f8a1bcb/set-of-2-durable-bats-3-table-tennis-balls-set-ppr-100.jpg?format=auto&quality=70&f=768x0" alt="Product 14">
+                <span class="rating"><i class="fa fa-star"></i> 4.35 | 1.3k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Set of 2 Durable Bats + 3 Table Tennis Balls....</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2664135/57ab7df0240b5a42ddd901776a7e9917/adult-badminton-racket-br-100-blue.jpg?format=auto&quality=70&f=768x0" alt="Product 15">
+                <span class="rating"><i class="fa fa-star"></i> 4.25 | 1.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Racket BR100</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">LIMITED STOCK</span>
+                <img src="https://contents.mediadecathlon.com/p2303250/d56abf8c9f9aa7580a3c58aefafedd7e/adult-football-jersey-shirt-portugal-f500-2024.jpg?format=auto&quality=70&f=768x0" alt="Product 16">
+                <span class="rating"><i class="fa fa-star"></i> 4.70 | 4.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPSTA</div>
+                <div class="product-title">Football Jersey Adult</div>
+                <div class="product-price">₹ 999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2426985/bbcddd9478ef14df6702955943051249/gym-duffel-bag-30l-fold-down-black.jpg?format=auto&quality=70&f=768x0" alt="Product 17">
+                <span class="rating"><i class="fa fa-star"></i> 4.40 | 2.7k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Gym Bag 30L</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2924510/7bfda0baa45d401422170dad10aa859f/camping-tent-mh100-2-person-special-edition-.jpg?format=auto&quality=70&f=768x0" alt="Product 18">
+                <span class="rating"><i class="fa fa-star"></i> 4.85 | 8.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">QUECHUA</div>
+                <div class="product-title">Camping Tent 2 Person</div>
+                <div class="product-price">₹ 2,999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2903312/0747146f110a37fa742db9e3c5f2ca8a/adult-swimming-cap-silicone-56-60-cm-quick-dry-lightweight-white.jpg?format=auto&quality=70&f=2520x0" alt="Product 19">
+                <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Adult Swimming Cap Silicone 56-60 Cm Quick-Dry & Lightweight White</div>
+                <div class="product-price">₹ 299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2394572/45f7d7f3cede641c4ff711025de69d9e/unisex-running-cap-kiprun-5-panels-green-white.jpg?format=auto&quality=70&f=768x0" alt="Product 20">
+                <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPRUN</div>
+                <div class="product-title">Unisex Running Cap - Kiprun 5 Panels Green White</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">ONLINE EXCLUSIVE</span>
+                <img src="https://contents.mediadecathlon.com/p2626845/1662c5b6c1432bea8575a8ca5aca648c/insulated-12-racket-tennis-bag-xl-pro-control-gael-monfils-black.jpg?format=auto&quality=70&f=768x0" alt="Product 21">
+                <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Insulated 12-Racket Tennis Bag XL Pro Control Gaël Monfils - Black</div>
+                <div class="product-price">₹ 6,999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="product-slider-section new-arrivals">
+        <div class="product-slider-header">
+          <span>New Arrivals For You</span>
+          <div class="product-slider-arrows">
+            <button class="product-arrow left" data-slider="new-arrivals">&#8592;</button>
+            <button class="product-arrow right" data-slider="new-arrivals">&#8594;</button>
+          </div>
+        </div>
+
+        <div class="product-slider-container">
+          <div class="product-slider" data-slider="new-arrivals">
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1724744/a8373278310c30c7ce0af8f5b36843c1/p1724744.jpg?format=auto&quality=70&f=768x0" alt="Product 1">
+                <span class="rating"><i class="fa fa-star"></i> 4.39 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Men Gym Trackpants Joggers Sli...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2583096/8ef9a0183bfeecec1ecf3b83956c2579/p2583096.jpg?format=auto&quality=70&f=768x0" alt="Product 2">
+                <span class="rating"><i class="fa fa-star"></i> 4.61 | 6.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">QUECHUA</div>
+                <div class="product-title">Men Light Cargo Pant Grey - NH500</div>
+                <div class="product-price">₹ 1,499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 1,999</span> <span class='discount-text-badge'>25% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2811737/55c78b015d464c8aac427e3595400de3/p2811737.jpg?format=auto&quality=70&f=768x0" alt="Product 3">
+                <span class="rating"><i class="fa fa-star"></i> 4.73 | 7.9k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Microfibre Towel Basic S Lightweight</div>
+                <div class="product-price">₹ 99</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new" style="background-color: #ffe082;">Price drop</span>
+                <img src="https://contents.mediadecathlon.com/p2157315/f7e6bac4b706a58cb6d47203ece9234c/p2157315.jpg?format=auto&quality=70&f=768x0" alt="Product 4">
+                <span class="rating"><i class="fa fa-star"></i> 4.68 | 24k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DECATHLON</div>
+                <div class="product-title">Men's Regular Cotton Fitness T-Shi....</div>
+                <div class="product-price">₹ 499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 699</span> <span class='discount-text-badge'>28% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2008017/5dda1cd25f41bde63b27ba297b71f748/p2008017.jpg?format=auto&quality=70&f=768x0" alt="Product 5">
+                <span class="rating"><i class="fa fa-star"></i> 4.65 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Soft Cotton, Stretchy, Elastic Waist...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2742008/90f9b437efe48d94eede03840e5fa4f3/p2742008.jpg?format=auto&quality=70&f=768x0" alt="Product 6">
+                <span class="rating"><i class="fa fa-star"></i> 4.55 | 2.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">T-Shirt Sensation 530 M</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2498855/3d3ea0373c95f79c14067a370b5e682f/p2498855.jpg?f=150x150" alt="Product 7">
+                <span class="rating"><i class="fa fa-star"></i> 4.80 | 3.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Tennis Racket TR100</div>
+                <div class="product-price">₹ 1,299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1605540/4997bf2d4aa01126a2fd6c4d20554f1d/badminton-plastic-shuttlecock-psc-100x1-yellow.jpg?format=auto&quality=70&f=768x0" alt="Product 8">
+                <span class="rating"><i class="fa fa-star"></i> 4.20 | 1.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Plastic Shuttlecock</div>
+                <div class="product-price">₹ 199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2268324/603c6777689d4f123cbea3365c52d98e/portugal-football-size-5-2022.jpg?format=auto&quality=70&f=768x0" alt="Product 9">
+                <span class="rating"><i class="fa fa-star"></i> 4.75 | 5.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPSTA</div>
+                <div class="product-title">Football Size 5</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2688738/4e162bce835bda5a12f4dda3544cdb1d/yoga-mat-8-mm-thick-173-x-61-cm-with-strap-foam-jungle-blue-for-soft-yoga.jpg?format=auto&quality=70&f=768x0" alt="Product 10">
+                <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Yoga Mat Comfort 8mm</div>
+                <div class="product-price">₹ 899</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2774762/b2201dbca82ba79b0529b7dae4388f81/trekking-bag-50l-easy-fit-mt-100-black.jpg?format=auto&quality=70&f=768x0" alt="Product 11">
+                <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">SIMOND</div>
+                <div class="product-title">Trekking Bag 50L Easy-Fit....</div>
+                <div class="product-price">₹ 1,199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2867700/71637510adff77417c48db345e5bacf2/swimming-goggles-l-soft-green-tinted-secure-fit-turquoise.jpg?format=auto&quality=70&f=768x0" alt="Product 12">
+                <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Adult Swimming Goggles Men Womem...</div>
+                <div class="product-price">₹ 299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2636549/e9d41b1b7ab5d5a6c4b80271f1c817ed/jogflow-1901-men-running-shoes-cushioned-lightweight-flexibleblue-20km-wk.jpg?format=auto&quality=70&f=768x0" alt="Product 13">
+                <span class="rating"><i class="fa fa-star"></i> 4.90 | 9.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPRUN</div>
+                <div class="product-title">RJogflow 190.1 Men Running Shoes...</div>
+                <div class="product-price">₹ 2,499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2877146/fd71118729093e46b62efbd42f8a1bcb/set-of-2-durable-bats-3-table-tennis-balls-set-ppr-100.jpg?format=auto&quality=70&f=768x0" alt="Product 14">
+                <span class="rating"><i class="fa fa-star"></i> 4.35 | 1.3k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Set of 2 Durable Bats + 3 Table Tennis Balls....</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2664135/57ab7df0240b5a42ddd901776a7e9917/adult-badminton-racket-br-100-blue.jpg?format=auto&quality=70&f=768x0" alt="Product 15">
+                <span class="rating"><i class="fa fa-star"></i> 4.25 | 1.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Racket BR100</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Curated Treks Image Boxes -->
+      <section class="curated-section">
+        <h3 class="curated-title">Our Curated choices for Indian Treks!</h3>
+        <button class="curated-arrow left" id="curatedLeft">&#8592;</button>
+        <div class="curated-slider" id="curatedSlider">
+          <!-- 10 curated cards -->
+          <div class="curated-card"><img src="assets/images/treks/img1.png" alt="Trek 1"><div class="curated-info"><h4>Surya Top Trek, Uttarakhand</h4><small>Photo by Sanjeev Tandon</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img2.png" alt="Trek 2"><div class="curated-info"><h4>Rupin Pass Trek, Himachal Pradesh</h4><small>Photo by Jothiranjan</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img3.png" alt="Trek 3"><div class="curated-info"><h4>Kedartal Trek, Uttarakhand<h4><small>Photo by Vikas Sharma</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img4.png" alt="Trek 4"><div class="curated-info"><h4>Buran Ghati Trek, Himachal Pradesh</h4><small>Photo by Anirban Banerjee</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img5.png" alt="Trek 5"><div class="curated-info"><h4>Hampta Pass Trek, Himachal Pradesh</h4><small>Photo by Rahul Mehta</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img6.png" alt="Trek 6"><div class="curated-info"><h4>Goechala Trek, Sikkim</h4><small>Photo by Karan N</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img7.png" alt="Trek 7"><div class="curated-info"><h4>Sandakphu Trek, West Bengal</h4><small>Photo by Priya S</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img8.png" alt="Trek 8"><div class="curated-info"><h4>Valley of Flowers Trek</h4><small>Photo by Mahesh R</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img9.png" alt="Trek 9"><div class="curated-info"><h4>Tarsar Marsar Trek, J&K</h4><small>Photo by Rohit G</small></div></div>
+          <div class="curated-card"><img src="assets/images/treks/img10.png" alt="Trek 10"><div class="curated-info"><h4>Dzongri Trek, Sikkim</h4><small>Photo by Lata P</small></div></div>
+        </div>
+        <button class="curated-arrow right" id="curatedRight">&#8594;</button>
+      </section>
+
+
+
+      <section class="product-slider-section new-arrivals">
+        <div class="product-slider-header">
+          <span>New Arrivals For You</span>
+          <div class="product-slider-arrows">
+            <button class="product-arrow left" data-slider="new-arrivals">&#8592;</button>
+            <button class="product-arrow right" data-slider="new-arrivals">&#8594;</button>
+          </div>
+        </div>
+
+        <div class="product-slider-container">
+          <div class="product-slider" data-slider="new-arrivals">
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1724744/a8373278310c30c7ce0af8f5b36843c1/p1724744.jpg?format=auto&quality=70&f=768x0" alt="Product 1">
+                <span class="rating"><i class="fa fa-star"></i> 4.39 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Men Gym Trackpants Joggers Sli...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2583096/8ef9a0183bfeecec1ecf3b83956c2579/p2583096.jpg?format=auto&quality=70&f=768x0" alt="Product 2">
+                <span class="rating"><i class="fa fa-star"></i> 4.61 | 6.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">QUECHUA</div>
+                <div class="product-title">Men Light Cargo Pant Grey - NH500</div>
+                <div class="product-price">₹ 1,499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 1,999</span> <span class='discount-text-badge'>25% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2811737/55c78b015d464c8aac427e3595400de3/p2811737.jpg?format=auto&quality=70&f=768x0" alt="Product 3">
+                <span class="rating"><i class="fa fa-star"></i> 4.73 | 7.9k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Microfibre Towel Basic S Lightweight</div>
+                <div class="product-price">₹ 99</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new" style="background-color: #ffe082;">Price drop</span>
+                <img src="https://contents.mediadecathlon.com/p2157315/f7e6bac4b706a58cb6d47203ece9234c/p2157315.jpg?format=auto&quality=70&f=768x0" alt="Product 4">
+                <span class="rating"><i class="fa fa-star"></i> 4.68 | 24k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DECATHLON</div>
+                <div class="product-title">Men's Regular Cotton Fitness T-Shi....</div>
+                <div class="product-price">₹ 499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 699</span> <span class='discount-text-badge'>28% Off</span></div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2008017/5dda1cd25f41bde63b27ba297b71f748/p2008017.jpg?format=auto&quality=70&f=768x0" alt="Product 5">
+                <span class="rating"><i class="fa fa-star"></i> 4.65 | 4.6k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Soft Cotton, Stretchy, Elastic Waist...</div>
+                <div class="product-price">₹ 799</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2742008/90f9b437efe48d94eede03840e5fa4f3/p2742008.jpg?format=auto&quality=70&f=768x0" alt="Product 6">
+                <span class="rating"><i class="fa fa-star"></i> 4.55 | 2.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">T-Shirt Sensation 530 M</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2498855/3d3ea0373c95f79c14067a370b5e682f/p2498855.jpg?f=150x150" alt="Product 7">
+                <span class="rating"><i class="fa fa-star"></i> 4.80 | 3.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Tennis Racket TR100</div>
+                <div class="product-price">₹ 1,299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p1605540/4997bf2d4aa01126a2fd6c4d20554f1d/badminton-plastic-shuttlecock-psc-100x1-yellow.jpg?format=auto&quality=70&f=768x0" alt="Product 8">
+                <span class="rating"><i class="fa fa-star"></i> 4.20 | 1.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Plastic Shuttlecock</div>
+                <div class="product-price">₹ 199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2268324/603c6777689d4f123cbea3365c52d98e/portugal-football-size-5-2022.jpg?format=auto&quality=70&f=768x0" alt="Product 9">
+                <span class="rating"><i class="fa fa-star"></i> 4.75 | 5.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPSTA</div>
+                <div class="product-title">Football Size 5</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2688738/4e162bce835bda5a12f4dda3544cdb1d/yoga-mat-8-mm-thick-173-x-61-cm-with-strap-foam-jungle-blue-for-soft-yoga.jpg?format=auto&quality=70&f=768x0" alt="Product 10">
+                <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Yoga Mat Comfort 8mm</div>
+                <div class="product-price">₹ 899</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2774762/b2201dbca82ba79b0529b7dae4388f81/trekking-bag-50l-easy-fit-mt-100-black.jpg?format=auto&quality=70&f=768x0" alt="Product 11">
+                <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">SIMOND</div>
+                <div class="product-title">Trekking Bag 50L Easy-Fit....</div>
+                <div class="product-price">₹ 1,199</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2867700/71637510adff77417c48db345e5bacf2/swimming-goggles-l-soft-green-tinted-secure-fit-turquoise.jpg?format=auto&quality=70&f=768x0" alt="Product 12">
+                <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.8k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Adult Swimming Goggles Men Womem...</div>
+                <div class="product-price">₹ 299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2636549/e9d41b1b7ab5d5a6c4b80271f1c817ed/jogflow-1901-men-running-shoes-cushioned-lightweight-flexibleblue-20km-wk.jpg?format=auto&quality=70&f=768x0" alt="Product 13">
+                <span class="rating"><i class="fa fa-star"></i> 4.90 | 9.1k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPRUN</div>
+                <div class="product-title">RJogflow 190.1 Men Running Shoes...</div>
+                <div class="product-price">₹ 2,499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2877146/fd71118729093e46b62efbd42f8a1bcb/set-of-2-durable-bats-3-table-tennis-balls-set-ppr-100.jpg?format=auto&quality=70&f=768x0" alt="Product 14">
+                <span class="rating"><i class="fa fa-star"></i> 4.35 | 1.3k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Set of 2 Durable Bats + 3 Table Tennis Balls....</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2664135/57ab7df0240b5a42ddd901776a7e9917/adult-badminton-racket-br-100-blue.jpg?format=auto&quality=70&f=768x0" alt="Product 15">
+                <span class="rating"><i class="fa fa-star"></i> 4.25 | 1.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">PERFLY</div>
+                <div class="product-title">Badminton Racket BR100</div>
+                <div class="product-price">₹ 599</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">LIMITED STOCK</span>
+                <img src="https://contents.mediadecathlon.com/p2303250/d56abf8c9f9aa7580a3c58aefafedd7e/adult-football-jersey-shirt-portugal-f500-2024.jpg?format=auto&quality=70&f=768x0" alt="Product 16">
+                <span class="rating"><i class="fa fa-star"></i> 4.70 | 4.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPSTA</div>
+                <div class="product-title">Football Jersey Adult</div>
+                <div class="product-price">₹ 999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2426985/bbcddd9478ef14df6702955943051249/gym-duffel-bag-30l-fold-down-black.jpg?format=auto&quality=70&f=768x0" alt="Product 17">
+                <span class="rating"><i class="fa fa-star"></i> 4.40 | 2.7k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">DOMYOS</div>
+                <div class="product-title">Gym Bag 30L</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2924510/7bfda0baa45d401422170dad10aa859f/camping-tent-mh100-2-person-special-edition-.jpg?format=auto&quality=70&f=768x0" alt="Product 18">
+                <span class="rating"><i class="fa fa-star"></i> 4.85 | 8.2k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">QUECHUA</div>
+                <div class="product-title">Camping Tent 2 Person</div>
+                <div class="product-price">₹ 2,999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2903312/0747146f110a37fa742db9e3c5f2ca8a/adult-swimming-cap-silicone-56-60-cm-quick-dry-lightweight-white.jpg?format=auto&quality=70&f=2520x0" alt="Product 19">
+                <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">NABAIJI</div>
+                <div class="product-title">Adult Swimming Cap Silicone 56-60 Cm Quick-Dry & Lightweight White</div>
+                <div class="product-price">₹ 299</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">NEW ARRIVALS</span>
+                <img src="https://contents.mediadecathlon.com/p2394572/45f7d7f3cede641c4ff711025de69d9e/unisex-running-cap-kiprun-5-panels-green-white.jpg?format=auto&quality=70&f=768x0" alt="Product 20">
+                <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.0k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">KIPRUN</div>
+                <div class="product-title">Unisex Running Cap - Kiprun 5 Panels Green White</div>
+                <div class="product-price">₹ 499</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img-badge">
+                <span class="badge new">ONLINE EXCLUSIVE</span>
+                <img src="https://contents.mediadecathlon.com/p2626845/1662c5b6c1432bea8575a8ca5aca648c/insulated-12-racket-tennis-bag-xl-pro-control-gael-monfils-black.jpg?format=auto&quality=70&f=768x0" alt="Product 21">
+                <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.5k</span>
+                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+              </div>
+              <div class="product-info">
+                <div class="brand">ARTENGO</div>
+                <div class="product-title">Insulated 12-Racket Tennis Bag XL Pro Control Gaël Monfils - Black</div>
+                <div class="product-price">₹ 6,999</div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+<img src="assets/images/banners.png" alt="Promotional Banner" style="width: 1442px;" class="full-width-banner">
+
+
+<section class="product-slider-section trending-near-you">
+  <div class="product-slider-header">
+    <span>Trending Near You</span>
+    <div class="product-slider-arrows">
+      <button class="product-arrow left" data-slider="trending-near-you">&#8592;</button>
+      <button class="product-arrow right" data-slider="trending-near-you">&#8594;</button>
+    </div>
+  </div>
+
+  <div class="product-slider-container">
+    <div class="product-slider" data-slider="trending-near-you">
+      <div class="product-card" data-id="1724744">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p1724744/a8373278310c30c7ce0af8f5b36843c1/p1724744.jpg?format=auto&quality=70&f=768x0" alt="Product 1">
+          <span class="rating"><i class="fa fa-star"></i> 4.39 | 4.6k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">DOMYOS</div>
+          <div class="product-title">Men Gym Trackpants Joggers Sli...</div>
+          <div class="product-price">₹ 799</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2583096/8ef9a0183bfeecec1ecf3b83956c2579/p2583096.jpg?format=auto&quality=70&f=768x0" alt="Product 2">
+          <span class="rating"><i class="fa fa-star"></i> 4.61 | 6.0k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">QUECHUA</div>
+          <div class="product-title">Men Light Cargo Pant Grey - NH500</div>
+          <div class="product-price">₹ 1,499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 1,999</span> <span class='discount-text-badge'>25% Off</span></div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2811737/55c78b015d464c8aac427e3595400de3/p2811737.jpg?format=auto&quality=70&f=768x0" alt="Product 3">
+          <span class="rating"><i class="fa fa-star"></i> 4.73 | 7.9k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">NABAIJI</div>
+          <div class="product-title">Microfibre Towel Basic S Lightweight</div>
+          <div class="product-price">₹ 99</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new" style="background-color: #ffe082;">Price drop</span>
+          <img src="https://contents.mediadecathlon.com/p2157315/f7e6bac4b706a58cb6d47203ece9234c/p2157315.jpg?format=auto&quality=70&f=768x0" alt="Product 4">
+          <span class="rating"><i class="fa fa-star"></i> 4.68 | 24k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">DECATHLON</div>
+          <div class="product-title">Men's Regular Cotton Fitness T-Shi....</div>
+          <div class="product-price">₹ 499 <span style='text-decoration:line-through;color:#888;font-size:12px;'>₹ 699</span> <span class='discount-text-badge'>28% Off</span></div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2008017/5dda1cd25f41bde63b27ba297b71f748/p2008017.jpg?format=auto&quality=70&f=768x0" alt="Product 5">
+          <span class="rating"><i class="fa fa-star"></i> 4.65 | 4.6k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">DOMYOS</div>
+          <div class="product-title">Soft Cotton, Stretchy, Elastic Waist...</div>
+          <div class="product-price">₹ 799</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+    
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2742008/90f9b437efe48d94eede03840e5fa4f3/p2742008.jpg?format=auto&quality=70&f=768x0" alt="Product 6">
+          <span class="rating"><i class="fa fa-star"></i> 4.55 | 2.1k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">PERFLY</div>
+          <div class="product-title">T-Shirt Sensation 530 M</div>
+          <div class="product-price">₹ 499</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2498855/3d3ea0373c95f79c14067a370b5e682f/p2498855.jpg?f=150x150" alt="Product 7">
+          <span class="rating"><i class="fa fa-star"></i> 4.80 | 3.2k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">ARTENGO</div>
+          <div class="product-title">Tennis Racket TR100</div>
+          <div class="product-price">₹ 1,299</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p1605540/4997bf2d4aa01126a2fd6c4d20554f1d/badminton-plastic-shuttlecock-psc-100x1-yellow.jpg?format=auto&quality=70&f=768x0" alt="Product 8">
+          <span class="rating"><i class="fa fa-star"></i> 4.20 | 1.1k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">PERFLY</div>
+          <div class="product-title">Badminton Plastic Shuttlecock</div>
+          <div class="product-price">₹ 199</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2268324/603c6777689d4f123cbea3365c52d98e/portugal-football-size-5-2022.jpg?format=auto&quality=70&f=768x0" alt="Product 9">
+          <span class="rating"><i class="fa fa-star"></i> 4.75 | 5.0k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">KIPSTA</div>
+          <div class="product-title">Football Size 5</div>
+          <div class="product-price">₹ 599</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2688738/4e162bce835bda5a12f4dda3544cdb1d/yoga-mat-8-mm-thick-173-x-61-cm-with-strap-foam-jungle-blue-for-soft-yoga.jpg?format=auto&quality=70&f=768x0" alt="Product 10">
+          <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.8k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">DOMYOS</div>
+          <div class="product-title">Yoga Mat Comfort 8mm</div>
+          <div class="product-price">₹ 899</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2774762/b2201dbca82ba79b0529b7dae4388f81/trekking-bag-50l-easy-fit-mt-100-black.jpg?format=auto&quality=70&f=768x0" alt="Product 11">
+          <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.5k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">SIMOND</div>
+          <div class="product-title">Trekking Bag 50L Easy-Fit....</div>
+          <div class="product-price">₹ 1,199</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2867700/71637510adff77417c48db345e5bacf2/swimming-goggles-l-soft-green-tinted-secure-fit-turquoise.jpg?format=auto&quality=70&f=768x0" alt="Product 12">
+          <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.8k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">NABAIJI</div>
+          <div class="product-title">Adult Swimming Goggles Men Womem...</div>
+          <div class="product-price">₹ 299</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2636549/e9d41b1b7ab5d5a6c4b80271f1c817ed/jogflow-1901-men-running-shoes-cushioned-lightweight-flexibleblue-20km-wk.jpg?format=auto&quality=70&f=768x0" alt="Product 13">
+          <span class="rating"><i class="fa fa-star"></i> 4.90 | 9.1k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">KIPRUN</div>
+          <div class="product-title">RJogflow 190.1 Men Running Shoes...</div>
+          <div class="product-price">₹ 2,499</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2877146/fd71118729093e46b62efbd42f8a1bcb/set-of-2-durable-bats-3-table-tennis-balls-set-ppr-100.jpg?format=auto&quality=70&f=768x0" alt="Product 14">
+          <span class="rating"><i class="fa fa-star"></i> 4.35 | 1.3k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">ARTENGO</div>
+          <div class="product-title">Set of 2 Durable Bats + 3 Table Tennis Balls....</div>
+          <div class="product-price">₹ 599</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2664135/57ab7df0240b5a42ddd901776a7e9917/adult-badminton-racket-br-100-blue.jpg?format=auto&quality=70&f=768x0" alt="Product 15">
+          <span class="rating"><i class="fa fa-star"></i> 4.25 | 1.0k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">PERFLY</div>
+          <div class="product-title">Badminton Racket BR100</div>
+          <div class="product-price">₹ 599</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">LIMITED STOCK</span>
+          <img src="https://contents.mediadecathlon.com/p2303250/d56abf8c9f9aa7580a3c58aefafedd7e/adult-football-jersey-shirt-portugal-f500-2024.jpg?format=auto&quality=70&f=768x0" alt="Product 16">
+          <span class="rating"><i class="fa fa-star"></i> 4.70 | 4.2k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">KIPSTA</div>
+          <div class="product-title">Football Jersey Adult</div>
+          <div class="product-price">₹ 999</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2426985/bbcddd9478ef14df6702955943051249/gym-duffel-bag-30l-fold-down-black.jpg?format=auto&quality=70&f=768x0" alt="Product 17">
+          <span class="rating"><i class="fa fa-star"></i> 4.40 | 2.7k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">DOMYOS</div>
+          <div class="product-title">Gym Bag 30L</div>
+          <div class="product-price">₹ 499</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2924510/7bfda0baa45d401422170dad10aa859f/camping-tent-mh100-2-person-special-edition-.jpg?format=auto&quality=70&f=768x0" alt="Product 18">
+          <span class="rating"><i class="fa fa-star"></i> 4.85 | 8.2k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">QUECHUA</div>
+          <div class="product-title">Camping Tent 2 Person</div>
+          <div class="product-price">₹ 2,999</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2903312/0747146f110a37fa742db9e3c5f2ca8a/adult-swimming-cap-silicone-56-60-cm-quick-dry-lightweight-white.jpg?format=auto&quality=70&f=2520x0" alt="Product 19">
+          <span class="rating"><i class="fa fa-star"></i> 4.60 | 3.5k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">NABAIJI</div>
+          <div class="product-title">Adult Swimming Cap Silicone 56-60 Cm Quick-Dry & Lightweight White</div>
+          <div class="product-price">₹ 299</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">NEW ARRIVALS</span>
+          <img src="https://contents.mediadecathlon.com/p2394572/45f7d7f3cede641c4ff711025de69d9e/unisex-running-cap-kiprun-5-panels-green-white.jpg?format=auto&quality=70&f=768x0" alt="Product 20">
+          <span class="rating"><i class="fa fa-star"></i> 4.50 | 2.0k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">KIPRUN</div>
+          <div class="product-title">Unisex Running Cap - Kiprun 5 Panels Green White</div>
+          <div class="product-price">₹ 499</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-badge">
+          <span class="badge new">ONLINE EXCLUSIVE</span>
+          <img src="https://contents.mediadecathlon.com/p2626845/1662c5b6c1432bea8575a8ca5aca648c/insulated-12-racket-tennis-bag-xl-pro-control-gael-monfils-black.jpg?format=auto&quality=70&f=768x0" alt="Product 21">
+          <span class="rating"><i class="fa fa-star"></i> 4.30 | 1.5k</span>
+          <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
+        </div>
+        <div class="product-info">
+          <div class="brand">ARTENGO</div>
+          <div class="product-title">Insulated 12-Racket Tennis Bag XL Pro Control Gaël Monfils - Black</div>
+          <div class="product-price">₹ 6,999</div>
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <!-- -------- FOOTER -------- -->
+    <footer class="site-footer">
+      <!-- Promise Bar -->
+      <div class="promise-bar container">
+        <div class="promise-item"><i class="fa fa-percentage"></i> No Cost EMI Available*</div>
+        <div class="promise-item"><i class="fa fa-undo"></i> Easy Returns*</div>
+        <div class="promise-item"><i class="fa fa-smile"></i> 1&nbsp;million+ happy Customers</div>
+        <div class="app-promo">
+          <p class="app-title">Experience Decathlon App on Mobile</p>
+          <div class="app-buttons">
+            <a href="#"><img src="assets/images/google-play.png" alt="Google Play" /></a>
+            <a href="#"><img src="assets/images/app-store.png" alt="App Store" /></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Link Columns -->
+      <div class="footer-links container">
+        <div class="link-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact our Stores</a></li>
+            <li><a href="#">Delivery</a></li>
+          </ul>
+        </div>
+        <div class="link-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Decathlon for Schools</a></li>
+            <li><a href="#">Decathlon for Corporates</a></li>
+            <li><a href="#">Decathlon for Sport Clubs</a></li>
+            <li><a href="#">Decathlon Gift Cards</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Decathlon Second Life</a></li>
+            <li><a href="#">Decathlon Buy Back</a></li>
+            <li><a href="#">Installation &amp; Assembly Services</a></li>
+          </ul>
+        </div>
+        <div class="link-col">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">Who we are</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Made in India</a></li>
+            <li><a href="#">Social Initiatives</a></li>
+          </ul>
+        </div>
+        <div class="link-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="link-col social-col">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <h4 class="mini-title">Sport Advice for You</h4>
+          <a href="#" class="pill-link">blog.decathlon.in</a>
+          <h4 class="mini-title">Explore Sports Events Near You</h4>
+          <a href="#" class="pill-link">play.decathlon.in</a>
+        </div>
+      </div>
+
+      <!-- Payment & Country -->
+      <div class="footer-bottom container">
+        <div class="secure">
+          <i class="fa fa-shield-alt"></i> 100% Secure Transaction
+          <span class="sub">Secure SSL encryption</span>
+        </div>
+        <div class="payment-icons">
+          <i class="fa fa-credit-card"></i>
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+          <i class="fab fa-cc-amazon-pay"></i>
+        </div>
+        <a href="#" class="site-map">Site Map</a>
+        <div class="countries">Decathlon is present in 
+  <div class="countries-dropdown">
+    <button id="countryToggle" class="pill" aria-haspopup="listbox" aria-expanded="false">46 Countries</button>
+    <ul id="countryList" class="country-list" role="listbox" aria-label="Decathlon countries">
+      <li role="option">France</li>
+      <li role="option">Spain</li>
+      <li role="option">Portugal</li>
+      <li role="option">Italy</li>
+      <li role="option">Belgium</li>
+      <li role="option">Germany</li>
+      <li role="option">Netherlands</li>
+      <li role="option">Poland</li>
+      <li role="option">Czech Republic</li>
+      <li role="option">Hungary</li>
+      <li role="option">Romania</li>
+      <li role="option">United Kingdom</li>
+      <li role="option">Ireland</li>
+      <li role="option">Sweden</li>
+      <li role="option">Switzerland</li>
+      <li role="option">Austria</li>
+      <li role="option">Greece</li>
+      <li role="option">Turkey</li>
+      <li role="option">India</li>
+      <li role="option">China</li>
+      <li role="option">Singapore</li>
+      <li role="option">Malaysia</li>
+      <li role="option">Thailand</li>
+      <li role="option">Indonesia</li>
+      <li role="option">Philippines</li>
+      <li role="option">Vietnam</li>
+      <li role="option">Japan</li>
+      <li role="option">South Korea</li>
+      <li role="option">Australia</li>
+      <li role="option">Brazil</li>
+      <li role="option">Chile</li>
+      <li role="option">Colombia</li>
+      <li role="option">Mexico</li>
+      <li role="option">United States</li>
+      <li role="option">Canada</li>
+      <li role="option">Morocco</li>
+      <li role="option">Tunisia</li>
+      <li role="option">Egypt</li>
+      <li role="option">South Africa</li>
+      <li role="option">Kenya</li>
+      <li role="option">Senegal</li>
+      <li role="option">Ivory Coast</li>
+      <li role="option">Qatar</li>
+      <li role="option">United Arab Emirates</li>
+      <li role="option">Saudi Arabia</li>
+      <li role="option">Russia</li>
+      <li role="option">Ukraine</li>
+      <li role="option">Argentina</li>
+    </ul>
+  </div>
+</div>
+      </div>
+
+      <p class="copyright">© 2025 Decathlon Sports India Pvt Ltd. All rights reserved.</p>
+    </footer>
+
+    <!-- Load products data globally, then main script -->
+    <script src="data/products.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/cart.js"></script>
+    <script src="script/main.js"></script>
+    <script src="script/wishlist.js"></script>
+  </body>
+</html>
